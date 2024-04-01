@@ -4,13 +4,13 @@ import { Component } from '@angular/core';
   selector: 'zld-main',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      main works!
-    </p>
+  template: ` <main class="main"></main> `,
+  styles: `
+    .main {
+      width: 100vw;
+      height: 80vh;
+      background-image: url('./assets/background.png');
+    }
   `,
-  styles: ``
 })
-export class MainComponent {
-
-}
+export class MainComponent {}
