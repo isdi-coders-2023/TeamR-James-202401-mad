@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
     .main {
       width: 100vw;
       height: 80vh;
-      background-image: url('./assets/background.png');
+      background-image: url('../../../assets/background.png');
     }
   `,
 })
