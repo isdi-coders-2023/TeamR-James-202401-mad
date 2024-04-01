@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
   selector: 'zld-header',
   standalone: true,
-  imports: [],
+  imports: [NavbarComponent],
   template: `
     <header>
       <img
@@ -13,6 +14,7 @@ import { Component } from '@angular/core';
         width="186"
       />
     </header>
+    <zld-navbar />
   `,
   styles: `
     header {

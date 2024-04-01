@@ -1,15 +1,23 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'zld-main',
   standalone: true,
-  imports: [],
-  template: ` <main class="main"></main> `,
+  imports: [HomeComponent],
+  template: `
+    <main class="main">
+      <zld-home />
+    </main>
+  `,
   styles: `
     .main {
       width: 100vw;
       height: 80vh;
       background-image: url('../../../assets/background.png');
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   `,
 })
