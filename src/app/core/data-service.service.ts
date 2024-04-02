@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, catchError, of } from 'rxjs';
-import { ItemsData } from './zelda-items-data';
+import { Observable } from 'rxjs';
+import { ZeldaItemsData } from './zelda-items-data';
 
 @Injectable({
   providedIn: 'root',
@@ -9,12 +9,8 @@ import { ItemsData } from './zelda-items-data';
 export class DataService {
   constructor(private http: HttpClient) {}
   baseURL = 'https://botw-compendium.herokuapp.com/api/v3/compendium/';
-  getData(): Observable<ItemsData | undefined> {
-    return this.http.get<ItemsData>(this.baseURL).pipe(
-      catchError((error) => {
-        console.log(error);
-        return of(undefined);
-      }),
-    );
+
+  getData(): Observable<ZeldaItemsData> {
+    return this.http.get<ZeldaItemsData>(this.baseURL);
   }
 }
