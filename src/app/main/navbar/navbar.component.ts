@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
     <div class="navbar">
       <img src="../assets/burger.svg" alt="logoBurger" />
       <nav>
-        <ul>
+        <ul hidden>
           <li>
             <a href=""
               ><img src="../assets/favorites.svg" alt="logoFavorites"
@@ -46,6 +46,13 @@ import { Component } from '@angular/core';
       </nav>
     </div>
   `,
-  styles: ``,
+  // styles: `
+  //   div {
+  //     display: flex;
+  //     position: absolute;
+  //     margin-left: 16rem;
+
+  //    }
+  // `,
 })
 export class NavbarComponent {}

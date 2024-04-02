@@ -18,6 +18,4 @@ import { NavbarComponent } from './main/navbar/navbar.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'ZeldaAngular17';
-}
+export class AppComponent {}

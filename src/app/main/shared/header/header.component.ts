@@ -7,6 +7,7 @@ import { NavbarComponent } from '../../navbar/navbar.component';
   imports: [NavbarComponent],
   template: `
     <header>
+      <zld-navbar />
       <img
         src="../../../../assets/Zeldalogo3.png"
         alt="Zelda logo"
@@ -14,7 +15,6 @@ import { NavbarComponent } from '../../navbar/navbar.component';
         width="186"
       />
     </header>
-    <zld-navbar />
   `,
   styles: `
     header {
@@ -24,6 +24,10 @@ import { NavbarComponent } from '../../navbar/navbar.component';
       img {
         padding: 1rem;
       }
+    }
+    zld-navbar {
+      display: flex;
+      justify-content: end;
     }
   `,
 })
