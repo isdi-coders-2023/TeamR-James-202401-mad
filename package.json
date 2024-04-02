@@ -9,8 +9,8 @@
     "start:challenges": "ng serve --port 4600 --project challenges",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --code-coverage --browsers=ChromeHeadless",
-    "test:prod": "ng test --code-coverage --no-watch --browsers=ChromeHeadless",
+    "test": "ng test --code-coverage ",
+    "test:prod": "ng test --code-coverage --no-watch ",
     "lint": "ng lint",
     "prepare": "husky"
   },
