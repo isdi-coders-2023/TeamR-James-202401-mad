@@ -7,6 +7,13 @@
 }
 
 dasdasd {
+  display: flex;
+  justify-content: space-between;
   position: relative;
-  justify-content: end;
+  position: absolute;
+  top: 2rem;
+  list-style-type: none;
+  background-color: rgb(31, 30, 30);
+  display: none;
 }
+@media screen and (max-width: 550px);
