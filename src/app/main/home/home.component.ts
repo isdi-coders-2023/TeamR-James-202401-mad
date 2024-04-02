@@ -15,11 +15,9 @@ import { DomSanitizer } from '@angular/platform-browser';
       ></iframe>
     </div>
   `,
-  styles: `
-
-  `,
+  styles: ``,
 })
-export class HomeComponent {
+export default class HomeComponent {
   videoUrl = 'https://www.youtube.com/embed/uHGShqcAHlQ?si=f-E1yBHb0-ilV-_J';
   safeURL: unknown;
   constructor(private _sanitizer: DomSanitizer) {
