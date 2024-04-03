@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   styles: `
     .background {
       background-image: url(../../../../assets/error.webp);
+      background: fixed;
     }
   `,
 })

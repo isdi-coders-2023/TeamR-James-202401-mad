@@ -1,3 +1,4 @@
-backgroun{
-  background-image:url(../../../../assets/error.webp) ;
+backgroun {
+  background-image: url(../../../../assets/error.webp);
+  background: fixed;
 }
