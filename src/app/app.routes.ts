@@ -5,7 +5,7 @@ export const routes: Routes = [
   {
     path: 'home',
     title: 'HOME',
-    loadComponent: () => import('../app/main/home/home.component'),
+    loadComponent: () => import('../app/index/home/home.component'),
   },
   /* {
     path: '',
@@ -42,11 +42,11 @@ export const routes: Routes = [
     title: '',
     loadComponent: () => import(''),
   }, */
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
+  {
+    path: 'error',
+    title: '404-NOT FOUND',
+    loadComponent: () => import('./index/shared/error/error.component'),
+  },
 
-  { path: '**', redirectTo: 'home' },
+  { path: '**', redirectTo: 'error' },
 ];

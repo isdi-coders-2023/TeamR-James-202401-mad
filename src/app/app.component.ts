@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './main/shared/header/header.component';
-import { MainComponent } from './main/main/main.component';
-import { NavbarComponent } from './main/navbar/navbar.component';
+import { FooterComponent } from './index/shared/footer/footer.component';
+import { HeaderComponent } from './index/shared/header/header.component';
+import { MainComponent } from './index/shared/main/main.component';
+import { NavbarComponent } from './index/navbar/navbar.component';
 
 @Component({
   selector: 'zld-root',
