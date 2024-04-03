@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
   selector: 'zld-header',
   standalone: true,
-  imports: [],
+  imports: [NavbarComponent],
   template: `
     <header>
       <img
@@ -12,10 +13,13 @@ import { Component } from '@angular/core';
         aria-label="title"
         width="186"
       />
+      <zld-navbar />
     </header>
   `,
   styles: `
     header {
+      display: flex;
+      position: relative;
       height: 102px;
       width: 100%;
       background-color: #000000;

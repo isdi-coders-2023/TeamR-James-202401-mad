@@ -7,7 +7,7 @@ import HomeComponent from '../home/home.component';
   imports: [HomeComponent],
   template: `
     <main class="main">
-      <zld-home />
+      <ng-content></ng-content>
     </main>
   `,
   styles: `
