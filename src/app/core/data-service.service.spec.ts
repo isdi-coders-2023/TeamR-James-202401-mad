@@ -16,11 +16,18 @@ describe('DataServiceService', () => {
   });
 
   it('should be created', () => {
-    const service: DataService = TestBed.get(DataService);
+    // Deprecated const service: DataService = TestBed.get(DataService);
     expect(service).toBeTruthy();
   });
   it('should have getData function', () => {
-    const service: DataService = TestBed.get(DataService);
+    // Deprecated const service: DataService = TestBed.get(DataService);
     expect(service.getData).toBeTruthy();
   });
+
+  // it('getData should return the value of the API as Observable', (done: DoneFn) => {
+  //   service.getData().subscribe((value) => {
+  //     expect(value.itemsData).toContain()
+  //     done();
+  //   });
+  // });
 });
