@@ -11,21 +11,18 @@ import { NavbarComponent } from '../../navbar/navbar.component';
         src="../../../../assets/Zeldalogo3.png"
         alt="Zelda logo"
         aria-label="title"
-        width="186"
+        width="75px"
       />
-      <zld-navbar />
+      <zld-navbar></zld-navbar>
     </header>
   `,
   styles: `
     header {
+      height: 70px;
       display: flex;
-      position: relative;
-      height: 102px;
-      width: 100%;
+      justify-content: space-between;
+      padding: 1.2rem;
       background-color: #000000;
-      img {
-        padding: 1rem;
-      }
     }
   `,
 })
