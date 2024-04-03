@@ -4,7 +4,12 @@ import { Component } from '@angular/core';
   selector: 'zld-error',
   standalone: true,
   imports: [],
-  template: ``,
-  styles: ``,
+  template: `<div class="background"></div>`,
+  styles: `
+    .background {
+      background-image: url(../../../../assets/error.webp);
+      background: fixed;
+    }
+  `,
 })
 export default class ErrorComponent {}

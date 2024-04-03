@@ -16,18 +16,16 @@ describe('DataServiceService', () => {
   });
 
   it('should be created', () => {
-    // Deprecated const service: DataService = TestBed.get(DataService);
+    const service: DataService = TestBed.inject(DataService);
     expect(service).toBeTruthy();
   });
   it('should have getData function', () => {
-    // Deprecated const service: DataService = TestBed.get(DataService);
+    const service: DataService = TestBed.inject(DataService);
     expect(service.getData).toBeTruthy();
   });
-
-  // it('getData should return the value of the API as Observable', (done: DoneFn) => {
-  //   service.getData().subscribe((value) => {
-  //     expect(value.itemsData).toContain()
-  //     done();
-  //   });
-  // });
+  it('should call getData function', () => {
+    spyOn(service, 'getData').and.callThrough();
+    service.getData();
+    expect(service.getData).toHaveBeenCalled();
+  });
 });
