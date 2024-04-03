@@ -8,9 +8,8 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavbarComponent]
-    })
-    .compileComponents();
+      imports: [NavbarComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,12 @@ describe('NavbarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('toggleHidden should assign a value to isHidden opposite to itself', () => {
+    const comp = new NavbarComponent();
+    expect(comp.isHidden).toBe(true);
+    comp.toggleHidden();
+    expect(comp.isHidden).toBe(false);
   });
 });
