@@ -16,11 +16,16 @@ describe('DataServiceService', () => {
   });
 
   it('should be created', () => {
-    const service: DataService = TestBed.get(DataService);
+    const service: DataService = TestBed.inject(DataService);
     expect(service).toBeTruthy();
   });
   it('should have getData function', () => {
-    const service: DataService = TestBed.get(DataService);
+    const service: DataService = TestBed.inject(DataService);
     expect(service.getData).toBeTruthy();
+  });
+  it('should call getData function', () => {
+    spyOn(service, 'getData').and.callThrough();
+    service.getData();
+    expect(service.getData).toHaveBeenCalled();
   });
 });

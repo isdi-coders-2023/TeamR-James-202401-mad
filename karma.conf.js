@@ -10,8 +10,8 @@ module.exports = function (config) {
       require("karma-chrome-launcher"),
       require("karma-jasmine-html-reporter"),
       require("karma-coverage"),
+      require("karma-mocha-reporter"),
       require("@angular-devkit/build-angular/plugins/karma"),
-      requiere("karma-mocha-reporter"),
     ],
     client: {
       jasmine: {
@@ -28,7 +28,7 @@ module.exports = function (config) {
     coverageReporter: {
       dir: require("path").join(__dirname, "./coverage/zelda-angular17"),
       subdir: ".",
-      reporters: [{ type: "lcov" }, { type: "html" }, { type: "text-summary" }],
+      reporters: [{ type: "lcov" }, { type: "text-summary" }],
     },
     reporters: ["mocha", "kjhtml"],
     browsers: ["Chrome"],
