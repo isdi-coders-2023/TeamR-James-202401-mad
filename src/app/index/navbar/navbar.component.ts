@@ -91,9 +91,6 @@ import { Component } from '@angular/core';
       background-color: black;
       gap: 5px;
     }
-
-    // @media screen and (max-width: 550px) {
-    // }
   `,
 })
 export class NavbarComponent {
