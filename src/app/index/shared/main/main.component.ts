@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import HomeComponent from '../home/home.component';
+import HomeComponent from '../../home/home.component';
 
 @Component({
   selector: 'zld-main',
@@ -14,7 +14,7 @@ import HomeComponent from '../home/home.component';
     .main {
       width: 100vw;
       height: 80vh;
-      background-image: url('../../../assets/background.png');
+      background-image: url('../../../../assets/background.png');
       display: flex;
       align-items: center;
       justify-content: center;
