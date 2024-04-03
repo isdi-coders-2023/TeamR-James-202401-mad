@@ -1,7 +1,6 @@
 {
   "name": "zelda.ng",
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,8 +8,8 @@
     "start:challenges": "ng serve --port 4600 --project challenges",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --code-coverage ",
-    "test:prod": "ng test --code-coverage --no-watch ",
+    "test": "ng test --code-coverage --browsers=ChromeHeadless",
+    "test:prod": "ng test --code-coverage --no-watch --browsers=ChromeHeadless",
     "lint": "ng lint",
     "prepare": "husky"
   },
