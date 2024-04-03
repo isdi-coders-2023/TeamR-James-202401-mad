@@ -7,11 +7,11 @@ export const routes: Routes = [
     title: 'HOME',
     loadComponent: () => import('../app/index/home/home.component'),
   },
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
+  {
+    path: 'list',
+    title: 'LIST',
+    loadComponent: () => import('../app/index/list/list.component'),
+  },
   /* {
     path: '',
     title: '',

@@ -72,7 +72,13 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.css"],
             "scripts": [],
-            "karmaConfig": "karma.conf.js"
+            "karmaConfig": "karma.conf.js",
+            "codeCoverageExclude": [
+              "ZeldaAngular17/**/main.ts",
+              "ZeldaAngular17/**/app.route.ts",
+              "ZeldaAngular17/**/app.config.ts",
+              "ZeldaAngular17/**/environments/**"
+            ]
           }
         }
       }
