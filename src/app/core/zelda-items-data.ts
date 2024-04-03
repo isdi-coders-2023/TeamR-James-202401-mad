@@ -1,5 +1,5 @@
 export interface ZeldaItemsData {
-  itemsData: ItemsData[];
+  data: ItemsData[];
 }
 
 export interface ItemsData {
@@ -18,6 +18,6 @@ export interface ItemsData {
 }
 
 export interface Actions {
-  attack?: number;
-  defense?: number;
+  attack: number;
+  defense: number;
 }
