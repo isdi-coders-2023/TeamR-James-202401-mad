@@ -1,6 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DataService } from '../../core/data-service.service';
-import { ItemsData } from '../../core/zelda-items-data';
+
 
 @Component({
   selector: 'zld-list',
@@ -9,14 +9,9 @@ import { ItemsData } from '../../core/zelda-items-data';
   template: ` <p>list works!</p> `,
   styles: ``,
 })
-export default class ListComponent implements OnInit {
+export default class ListComponent  {
   public service = inject(DataService);
-  monster!: ItemsData;
 
-  ngOnInit(): void {
-    this.service.getData().subscribe(() => {
-      (monster: never) => (this.monster = monster);
-    });
-    console.log(this.monster);
-  }
+
+
 }
