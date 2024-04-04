@@ -17,9 +17,11 @@ import { Component } from '@angular/core';
   `,
   styles: `
     footer {
+      position: fixed;
       background-color: black;
       width: 100%;
       margin: 0px;
+      z-index: 2;
     }
     nav {
       display: flex;

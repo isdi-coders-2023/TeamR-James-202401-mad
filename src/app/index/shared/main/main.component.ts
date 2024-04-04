@@ -15,12 +15,13 @@ import ErrorComponent from '../error/error.component';
   styles: `
     .main {
       width: 100vw;
-      height: 80vh;
+      height: 93vh;
       background-image: url('../../../../assets/background.png');
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: auto;
+      padding: 50px;
     }
   `,
 })
