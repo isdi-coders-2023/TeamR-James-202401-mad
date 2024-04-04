@@ -3,6 +3,7 @@ import { DataService } from '../../core/data-service.service';
 import { StateService } from '../../core/state.service';
 import { ItemsData, ZeldaItemsData } from '../../core/zelda-items-data';
 import { CardComponent } from '../card/card.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'zld-list',
@@ -41,6 +42,7 @@ export default class ListComponent implements OnInit {
   constructor(
     private serviceZelda: DataService,
     private state: StateService,
+    private http: HttpClient,
   ) {
     this.serviceZelda.getData('monsters').subscribe({
       next: (zeldaItem: ZeldaItemsData) => {

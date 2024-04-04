@@ -6,13 +6,17 @@ import { ItemsData } from '../../core/zelda-items-data';
   standalone: true,
   imports: [],
   template: ` <div class="card">
-    <img
-      src="{{ zeldaInfo.image }}"
-      alt="Zelda element illustration"
-      tabindex="0"
-      height="100px"
-    />
-    <p class="card-name">{{ zeldaInfo.name }}</p>
+    @if (isImageDefined()) {
+      <img
+        src="{{ zeldaInfo.image }}"
+        alt="Zelda element illustration"
+        tabindex="0"
+        height="100px"
+      />
+      <p class="card-name">{{ zeldaInfo.name }}</p>
+    } @else {
+      <p>No image available</p>
+    }
   </div>`,
   styles: `
     .card {
@@ -42,4 +46,10 @@ import { ItemsData } from '../../core/zelda-items-data';
 })
 export class CardComponent {
   @Input() zeldaInfo!: ItemsData;
+
+  constructor() {}
+
+  isImageDefined(): boolean {
+    return this.zeldaInfo && this.zeldaInfo.image !== undefined;
+  }
 }
