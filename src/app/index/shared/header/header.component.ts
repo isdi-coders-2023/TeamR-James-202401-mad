@@ -28,12 +28,12 @@ import { NavbarComponent } from '../../navbar/navbar.component';
       z-index: 2;
     }
 
-    @media (width > 1090px) {
+    @media (width > 800px) {
       header {
-        height: 20vh;
+        height: 15vh;
       }
       img {
-        width: 300px;
+        width: 250px;
       }
     }
   `,
