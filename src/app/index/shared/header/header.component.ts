@@ -18,11 +18,23 @@ import { NavbarComponent } from '../../navbar/navbar.component';
   `,
   styles: `
     header {
+      position: fixed;
+      width: 100vw;
       height: 70px;
       display: flex;
       justify-content: space-between;
       padding: 1.2rem;
       background-color: #000000;
+      z-index: 2;
+    }
+
+    @media (width > 1090px) {
+      header {
+        height: 20vh;
+      }
+      img {
+        width: 300px;
+      }
     }
   `,
 })

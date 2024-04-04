@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class StateService {
-  private state$: BehaviorSubject<{ data: ItemsData[] }> = new BehaviorSubject<{
+  public state$: BehaviorSubject<{ data: ItemsData[] }> = new BehaviorSubject<{
     data: ItemsData[];
   }>({ data: [] });
   constructor() {}

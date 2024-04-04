@@ -73,24 +73,36 @@ import { Component } from '@angular/core';
     </nav>
   `,
   styles: `
-    .nav {
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: end;
-      margin-top: -0.7rem;
-    }
-
-    .nav-list {
-      width: 50vw;
-      display: flex;
-      align-items: center;
-
-      flex-direction: column;
-      list-style: none;
-      background-color: black;
-      gap: 5px;
+    :host {
+      .nav-list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        list-style: none;
+        background-color: black;
+        gap: 5px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: end;
+        margin-top: -0.7rem;
+      }
+      @media (width > 1090px) {
+        .nav-list {
+          display: flex;
+          flex-direction: row;
+        }
+        .nav {
+          visibility: visible;
+        }
+        .navbar {
+          display: none;
+        }
+        img {
+          height: 100px;
+          width: 100px;
+        }
+      }
     }
   `,
 })
