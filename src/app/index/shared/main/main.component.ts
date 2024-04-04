@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import HomeComponent from '../../home/home.component';
+import MonsterComponent from '../../monster/monster.component';
+import ErrorComponent from '../error/error.component';
 
 @Component({
   selector: 'zld-main',
   standalone: true,
-  imports: [HomeComponent],
+  imports: [HomeComponent, MonsterComponent, ErrorComponent],
   template: `
     <main class="main">
       <ng-content></ng-content>
