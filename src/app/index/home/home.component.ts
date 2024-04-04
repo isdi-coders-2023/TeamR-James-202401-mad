@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../core/data-service.service';
 import { StateService } from '../../core/state.service';
 import { ZeldaItemsData } from '../../core/zelda-items-data';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'zld-home',
   standalone: true,
@@ -24,6 +25,7 @@ export default class HomeComponent implements OnInit {
   constructor(
     private serviceZelda: DataService,
     private state: StateService,
+    private http: HttpClient,
   ) {
     this.serviceZelda.getData('monsters').subscribe({
       next: (zeldaItem: ZeldaItemsData) => {
