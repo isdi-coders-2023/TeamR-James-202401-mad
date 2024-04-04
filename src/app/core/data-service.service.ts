@@ -11,6 +11,8 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getData(category: string = ''): Observable<ZeldaItemsData> {
-    return this.http.get<ZeldaItemsData>(this.baseURL + `${category}`);
+    const r = this.http.get<ZeldaItemsData>(this.baseURL + `${category}`);
+
+    return r;
   }
 }
