@@ -21,4 +21,6 @@ import HomeComponent from '../../home/home.component';
     }
   `,
 })
-export class MainComponent {}
+export class MainComponent {
+  constructor() {}
+}

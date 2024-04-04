@@ -7,10 +7,10 @@ import { ZeldaItemsData } from './zelda-items-data';
   providedIn: 'root',
 })
 export class DataService {
+  baseURL = 'https://botw-compendium.herokuapp.com/api/v3/compendium/category/';
   constructor(private http: HttpClient) {}
-  baseURL = 'https://botw-compendium.herokuapp.com/api/v3/compendium/';
 
-  getData(): Observable<ZeldaItemsData> {
-    return this.http.get<ZeldaItemsData>(this.baseURL);
+  getData(category: string = ''): Observable<ZeldaItemsData> {
+    return this.http.get<ZeldaItemsData>(this.baseURL + `${category}`);
   }
 }
