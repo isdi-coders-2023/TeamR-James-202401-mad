@@ -1,0 +1,121 @@
+<div class="navbar">
+      <img
+        src="../assets/burger.svg"
+        alt="burgermenuicon"
+        (click)="toggleHidden()"
+        (keyup)="toggleHidden()"
+        tabindex="0"
+        role="button"
+        aria-label="button"
+      />
+    </div>
+    <nav class="nav" [hidden]="isShow">
+      <ul class="nav-list">
+        <li>
+          <a href="/favorites">
+            <img
+              src="../assets/favorites.svg"
+              alt="logoFavorites"
+              width="30px"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="/monsters"
+            ><img src="../assets/monsters.svg" alt="logoMonsters" width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/treasures"
+            ><img
+              src="../assets/treasures.svg"
+              alt="logoTreasures"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/creatures"
+            ><img
+              src="../assets/creatures.svg"
+              alt="logoCreatures"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/equipment"
+            ><img
+              src="../assets/equipment.svg"
+              alt="logoEquipament"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/materials"
+            ><img
+              src="../assets/materials.svg"
+              alt="logoMaterials"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/create"
+            ><img src="../assets/create.svg" alt="logoCreate" width="30px"
+          /></a>
+        </li>
+      </ul>
+    </nav>
+    <nav class="nav-desk">
+      <ul class="nav-list-desk">
+        <li>
+          <a href="/favorites">
+            <img
+              src="../assets/favorites.svg"
+              alt="logoFavorites"
+              width="30px"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="/monsters"
+            ><img src="../assets/monsters.svg" alt="logoMonsters" width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/treasures"
+            ><img
+              src="../assets/treasures.svg"
+              alt="logoTreasures"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/creatures"
+            ><img
+              src="../assets/creatures.svg"
+              alt="logoCreatures"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/equipment"
+            ><img
+              src="../assets/equipment.svg"
+              alt="logoEquipament"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/materials"
+            ><img
+              src="../assets/materials.svg"
+              alt="logoMaterials"
+              width="30px"
+          /></a>
+        </li>
+        <li>
+          <a href="/create"
+            ><img src="../assets/create.svg" alt="logoCreate" width="30px"
+          /></a>
+        </li>
+      </ul>
+    </nav>

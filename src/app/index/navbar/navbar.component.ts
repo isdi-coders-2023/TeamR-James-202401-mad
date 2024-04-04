@@ -1,77 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'zld-navbar',
   standalone: true,
   imports: [],
-  template: `
-    <div class="navbar">
-      <img
-        src="../assets/burger.svg"
-        alt="burgermenuicon"
-        (click)="toggleHidden()"
-        (keyup)="toggleHidden()"
-        tabindex="0"
-        role="button"
-        aria-label="button"
-      />
-    </div>
-    <nav class="nav" [hidden]="isHidden">
-      <ul class="nav-list">
-        <li>
-          <a href="/favorites">
-            <img
-              src="../assets/favorites.svg"
-              alt="logoFavorites"
-              width="30px"
-            />
-          </a>
-        </li>
-        <li>
-          <a href="/monsters"
-            ><img src="../assets/monsters.svg" alt="logoMonsters" width="30px"
-          /></a>
-        </li>
-        <li>
-          <a href="/treasures"
-            ><img
-              src="../assets/treasures.svg"
-              alt="logoTreasures"
-              width="30px"
-          /></a>
-        </li>
-        <li>
-          <a href="/creatures"
-            ><img
-              src="../assets/creatures.svg"
-              alt="logoCreatures"
-              width="30px"
-          /></a>
-        </li>
-        <li>
-          <a href="/equipment"
-            ><img
-              src="../assets/equipment.svg"
-              alt="logoEquipament"
-              width="30px"
-          /></a>
-        </li>
-        <li>
-          <a href="/materials"
-            ><img
-              src="../assets/materials.svg"
-              alt="logoMaterials"
-              width="30px"
-          /></a>
-        </li>
-        <li>
-          <a href="/create"
-            ><img src="../assets/create.svg" alt="logoCreate" width="30px"
-          /></a>
-        </li>
-      </ul>
-    </nav>
-  `,
+  templateUrl: './navbar.component.html',
   styles: `
     :host {
       .nav-list {
@@ -81,35 +14,47 @@ import { Component } from '@angular/core';
         list-style: none;
         background-color: black;
         gap: 5px;
+        cursor: pointer;
       }
       .navbar {
         display: flex;
+
         justify-content: end;
         margin-top: -0.7rem;
+        cursor: pointer;
       }
-      @media (width > 1090px) {
+      .nav-list-desk {
+        display: none;
+      }
+      @media (width > 800px) {
         .nav-list {
-          display: flex;
-          flex-direction: row;
+          display: none;
         }
-        .nav {
-          visibility: visible;
-        }
+
         .navbar {
           display: none;
         }
         img {
-          height: 100px;
-          width: 100px;
+          height: 50px;
+          width: 50px;
+        }
+        .nav-list-desk {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          list-style: none;
+          background-color: black;
+          gap: 5px;
         }
       }
     }
   `,
 })
 export class NavbarComponent {
-  isHidden = true;
+  isShow = true;
+  @ViewChild('nav-list') navElement: ElementRef | undefined;
   constructor() {}
   toggleHidden() {
-    this.isHidden = !this.isHidden;
+    this.isShow = !this.isShow;
   }
 }
