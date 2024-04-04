@@ -17,11 +17,11 @@ export const routes: Routes = [
     title: 'MONSTER',
     loadComponent: () => import('../app/index/monster/monster.component'),
   },
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
+  {
+    path: 'create',
+    title: 'FORM',
+    loadComponent: () => import('../app/index/form/form.component'),
+  },
   /* {
     path: '',
     title: '',
