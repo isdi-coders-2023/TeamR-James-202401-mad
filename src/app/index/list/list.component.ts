@@ -9,21 +9,28 @@ import { CardComponent } from '../card/card.component';
   standalone: true,
   imports: [CardComponent],
   template: `
-    <ul>
+    <div class="list-container">
       @for (item of cardData.data; track $index) {
-        <li>
-          <zld-card [zeldaInfo]="item"></zld-card>
-        </li>
+        <zld-card [zeldaInfo]="item" class="zelda-list"></zld-card>
       }
-    </ul>
+    </div>
   `,
   styles: `
+    .list-container {
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      padding-block: 100px;
+      margin: 0;
+    }
     .zelda-list {
+      z-index: 1;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      list-style: none;
+
       gap: 10px;
-      padding: 10px;
+      padding: 20px;
+      text-decoration: none;
     }
   `,
 })
@@ -46,7 +53,7 @@ export default class ListComponent implements OnInit {
   ngOnInit(): void {
     this.state.getItems().subscribe({
       next: (data) => {
-        (this.zeldaItemData = data), console.log(this.zeldaItemData);
+        (this.zeldaItemData = data), console.log(data);
       },
     });
   }

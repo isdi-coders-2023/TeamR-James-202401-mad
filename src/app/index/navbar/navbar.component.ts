@@ -19,20 +19,21 @@ import { Component } from '@angular/core';
     <nav class="nav" [hidden]="isHidden">
       <ul class="nav-list">
         <li>
-          <a href=""
-            ><img
+          <a href="/favorites">
+            <img
               src="../assets/favorites.svg"
               alt="logoFavorites"
               width="30px"
-          /></a>
+            />
+          </a>
         </li>
         <li>
-          <a href=""
+          <a href="/monsters"
             ><img src="../assets/monsters.svg" alt="logoMonsters" width="30px"
           /></a>
         </li>
         <li>
-          <a href=""
+          <a href="/treasures"
             ><img
               src="../assets/treasures.svg"
               alt="logoTreasures"
@@ -40,7 +41,7 @@ import { Component } from '@angular/core';
           /></a>
         </li>
         <li>
-          <a href=""
+          <a href="/creatures"
             ><img
               src="../assets/creatures.svg"
               alt="logoCreatures"
@@ -48,7 +49,7 @@ import { Component } from '@angular/core';
           /></a>
         </li>
         <li>
-          <a href=""
+          <a href="/equipment"
             ><img
               src="../assets/equipment.svg"
               alt="logoEquipament"
@@ -56,7 +57,7 @@ import { Component } from '@angular/core';
           /></a>
         </li>
         <li>
-          <a href=""
+          <a href="/materials"
             ><img
               src="../assets/materials.svg"
               alt="logoMaterials"
@@ -64,7 +65,7 @@ import { Component } from '@angular/core';
           /></a>
         </li>
         <li>
-          <a href=""
+          <a href="/create"
             ><img src="../assets/create.svg" alt="logoCreate" width="30px"
           /></a>
         </li>

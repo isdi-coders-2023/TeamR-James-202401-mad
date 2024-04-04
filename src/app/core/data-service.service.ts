@@ -12,7 +12,7 @@ export class DataService {
 
   getData(category: string = ''): Observable<ZeldaItemsData> {
     const r = this.http.get<ZeldaItemsData>(this.baseURL + `${category}`);
-
+    console.log(r);
     return r;
   }
 }

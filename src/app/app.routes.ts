@@ -12,11 +12,11 @@ export const routes: Routes = [
     title: 'LIST',
     loadComponent: () => import('../app/index/list/list.component'),
   },
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
+  {
+    path: 'monsters',
+    title: 'MONSTER',
+    loadComponent: () => import('../app/index/monster/monster.component'),
+  },
   /* {
     path: '',
     title: '',
