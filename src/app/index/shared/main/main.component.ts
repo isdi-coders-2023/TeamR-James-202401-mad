@@ -18,6 +18,7 @@ import ErrorComponent from '../error/error.component';
       height: 80vh;
       background-image: url('../../../../assets/background.png');
       display: flex;
+
       align-items: center;
       justify-content: center;
     }

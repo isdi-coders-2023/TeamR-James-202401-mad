@@ -24,6 +24,15 @@ import { NavbarComponent } from '../../navbar/navbar.component';
       padding: 1.2rem;
       background-color: #000000;
     }
+
+    @media (width > 1090px) {
+      header {
+        height: 20vh;
+      }
+      img {
+        width: 300px;
+      }
+    }
   `,
 })
 export class HeaderComponent {}

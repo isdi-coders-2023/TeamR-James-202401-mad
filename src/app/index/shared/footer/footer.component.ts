@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
   styles: `
     footer {
       background-color: black;
-      width: 100vw;
+      width: 100%;
       margin: 0px;
     }
     nav {
@@ -26,6 +26,12 @@ import { Component } from '@angular/core';
       justify-content: end;
       gap: 15px;
       padding: 10px;
+    }
+
+    @media (width > 1090px) {
+      footer {
+        height: 20vh;
+      }
     }
   `,
 })
