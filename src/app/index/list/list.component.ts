@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../core/data-service.service';
 import { StateService } from '../../core/state.service';
 import { ZeldaItemsData } from '../../core/zelda-items-data';
@@ -7,14 +7,21 @@ import { ZeldaItemsData } from '../../core/zelda-items-data';
   selector: 'zld-list',
   standalone: true,
   imports: [],
-  template: ` <p>list works!</p> `,
+  template: `
+    <!--   <div class="main">
+      @for (item of pokemonList; track item.id) {
+        <app-card []="item" />
+      }
+    </div> -->
+  `,
   styles: ``,
 })
 export default class ListComponent implements OnInit {
-  private serviceZelda = inject(DataService);
-  private state = inject(StateService);
   zeldaItemData?: ZeldaItemsData;
-  constructor() {
+  constructor(
+    private serviceZelda: DataService,
+    private state: StateService,
+  ) {
     this.serviceZelda.getData('monsters').subscribe({
       next: (zeldaItem: ZeldaItemsData) => {
         this.state.setItems(zeldaItem.data);
@@ -24,7 +31,7 @@ export default class ListComponent implements OnInit {
   ngOnInit(): void {
     this.state.getItems().subscribe({
       next: (data) => {
-        (this.zeldaItemData = data), console.log(this.zeldaItemData);
+        (this.zeldaItemData = data), console.log(data);
       },
     });
   }
