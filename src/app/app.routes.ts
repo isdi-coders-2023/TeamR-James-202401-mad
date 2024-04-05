@@ -22,11 +22,11 @@ export const routes: Routes = [
     title: 'FORM',
     loadComponent: () => import('../app/index/form/form.component'),
   },
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
+  {
+    path: 'details',
+    title: 'DETAILS',
+    loadComponent: () => import('../app/index/details/details.component'),
+  },
   /* {
     path: '',
     title: '',

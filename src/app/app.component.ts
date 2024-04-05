@@ -18,6 +18,6 @@ import FormComponent from './index/form/form.component';
     FormComponent,
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styles: ``,
 })
 export class AppComponent {}

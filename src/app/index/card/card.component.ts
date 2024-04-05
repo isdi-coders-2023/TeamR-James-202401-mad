@@ -1,11 +1,17 @@
 import { Component, Input } from '@angular/core';
 import { ItemsData } from '../../core/zelda-items-data';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'zld-card',
   standalone: true,
-  imports: [],
-  template: ` <div class="card">
+  imports: [RouterModule],
+  template: ` <div
+    class="card"
+    (click)="handleClick()"
+    (keyup)="handleClick()"
+    tabindex="0"
+  >
     @if (isImageDefined()) {
       <img
         src="{{ zeldaInfo.image }}"
@@ -47,9 +53,13 @@ import { ItemsData } from '../../core/zelda-items-data';
 export class CardComponent {
   @Input() zeldaInfo!: ItemsData;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   isImageDefined(): boolean {
     return this.zeldaInfo && this.zeldaInfo.image !== undefined;
+  }
+
+  handleClick() {
+    this.router.navigate(['/details']);
   }
 }
