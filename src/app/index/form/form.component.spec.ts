@@ -19,4 +19,9 @@ describe('FormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('the funcion must be called', () => {
+    spyOn(component.formData, 'reset').and.callThrough();
+    component.handleSubmit();
+    expect(component.formData.reset).toHaveBeenCalled();
+  });
 });
