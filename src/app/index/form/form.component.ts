@@ -19,13 +19,12 @@ import {
         <p>A NEW</p>
         <p>CREATURE</p>
       </article>
-      <form [formGroup]="formdata" (ngSubmit)="handleSubmit()">
+      <form [formGroup]="formData" (ngSubmit)="handleSubmit()">
         <label for="">
           <input
             type="text"
             formControlName="name"
             placeholder="Insertar nombre"
-            [(ngModel)]="inputText"
         /></label>
 
         <div class="alert" hidden>El nombre es obligatorio</div>
@@ -35,24 +34,22 @@ import {
             type="text"
             formControlName="location"
             placeholder="Localización"
-            [(ngModel)]="inputText2"
         /></label>
         <label for="">
           <input
             type="text"
             formControlName="description"
             placeholder="Descripción"
-            [(ngModel)]="inputText3"
         /></label>
         <label for=""
-          ><input
-            type="text"
-            formControlName="drop"
-            placeholder="Recompensa"
-            [(ngModel)]="inputText4"
+          ><input type="text" formControlName="drop" placeholder="Recompensa"
         /></label>
 
-        <label for=""> <input type="submit" value="Create" /></label>
+        <label for="">
+          <button type="submit" [disabled]="!formData.valid">
+            Create
+          </button></label
+        >
       </form>
     </div>
   `,
@@ -63,6 +60,7 @@ import {
       align-items: center;
       margin-top: 40px;
       background-image: url('../../../assets/wallpaperzeldaform3.svg');
+      padding-block: 2rem;
       border: 1px solid #000000;
       box-shadow: 0px 0px 5px 5px rgb(45, 64, 96);
       border-radius: 20px;
@@ -87,24 +85,17 @@ import {
   `,
 })
 export default class FormComponent {
-  formdata: FormGroup;
+  formData: FormGroup;
   constructor(private fb: FormBuilder) {
-    this.formdata = this.fb.group({
+    this.formData = this.fb.group({
       name: new FormControl('', Validators.required),
       location: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       drop: new FormControl('', Validators.required),
     });
   }
-  inputText4 = '';
-  inputText3 = '';
-  inputText2 = '';
-  inputText = '';
+
   handleSubmit() {
-    console.log(this.formdata.value);
-    this.inputText = '';
-    this.inputText2 = '';
-    this.inputText3 = '';
-    this.inputText4 = '';
+    this.formData.reset();
   }
 }
