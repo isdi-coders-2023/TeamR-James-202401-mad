@@ -22,8 +22,8 @@ describe('NavbarComponent', () => {
 
   it('toggleHidden should assign a value to isHidden opposite to itself', () => {
     const comp = new NavbarComponent();
-    expect(comp.isHidden).toBe(true);
+    expect(comp.isShow).toBe(true);
     comp.toggleHidden();
-    expect(comp.isHidden).toBe(false);
+    expect(comp.isShow).toBe(false);
   });
 });

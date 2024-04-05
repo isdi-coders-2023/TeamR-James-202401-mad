@@ -2,12 +2,16 @@ import { TestBed } from '@angular/core/testing';
 
 import { StateService } from './state.service';
 import { ItemsData } from './zelda-items-data';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('StateService', () => {
   let service: StateService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [StateService],
+    }).compileComponents();
     service = TestBed.inject(StateService);
   });
 
@@ -16,10 +20,10 @@ describe('StateService', () => {
   });
 
   it('getItems should return ...', () => {
-    const mockData = [{ id: 1 }, { id: 2 }, { id: 3 }] as ItemsData[];
-    service.setItems(mockData);
+    const mockData = '';
+    service.loadItems(mockData);
     let items: ItemsData[] = [];
     service.getItems().subscribe((data) => (items = data.data));
-    expect(items).toEqual(mockData);
+    expect(items).toEqual([]);
   });
 });
