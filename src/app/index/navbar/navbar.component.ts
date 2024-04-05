@@ -24,12 +24,13 @@ import { RouterModule } from '@angular/router';
         margin-top: -0.7rem;
         cursor: pointer;
       }
-      .nav-list-desk {
-        display: none;
-      }
+
       @media (width > 800px) {
+        .nav {
+          display: flex;
+        }
         .nav-list {
-          display: none;
+          display: flex;
         }
 
         .navbar {
