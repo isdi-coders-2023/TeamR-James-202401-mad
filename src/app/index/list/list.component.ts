@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../core/data-service.service';
 import { StateService } from '../../core/state.service';
-import { ItemsData, ZeldaItemsData } from '../../core/zelda-items-data';
+import { ZeldaItemsData } from '../../core/zelda-items-data';
 import { CardComponent } from '../card/card.component';
-import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'zld-list',
@@ -11,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
   imports: [CardComponent],
   template: `
     <div class="list-container">
-      @for (item of cardData.data; track $index) {
+      @for (item of zeldaItemsData?.data; track $index) {
         <zld-card [zeldaInfo]="item" class="zelda-list"></zld-card>
       }
     </div>
@@ -36,31 +35,29 @@ import { HttpClient } from '@angular/common/http';
   `,
 })
 export default class ListComponent implements OnInit {
-  zeldaItemData?: ZeldaItemsData;
-  cardData!: { data: ItemsData[] };
+  zeldaItemsData?: ZeldaItemsData;
+  category: string = '';
 
   constructor(
-    private serviceZelda: DataService,
     private state: StateService,
-    private http: HttpClient,
+    private activeRoute: ActivatedRoute,
   ) {
-    this.serviceZelda.getData('monsters').subscribe({
-      next: (zeldaItem: ZeldaItemsData) => {
-        this.state.setItems(zeldaItem.data);
-      },
+    this.activeRoute.params.subscribe((p) => {
+      this.category = p['category'];
+      this.loadCard();
     });
-    this.loadCard();
   }
 
   ngOnInit(): void {
     this.state.getItems().subscribe({
       next: (data) => {
-        (this.zeldaItemData = data), console.log(data);
+        this.zeldaItemsData = data;
+        console.log(data);
       },
     });
   }
 
   loadCard() {
-    this.state.state$.subscribe((item) => (this.cardData = item));
+    this.state.loadItems(this.category);
   }
 }

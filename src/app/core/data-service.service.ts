@@ -10,7 +10,7 @@ export class DataService {
   baseURL = 'https://botw-compendium.herokuapp.com/api/v3/compendium/category/';
   constructor(private http: HttpClient) {}
 
-  getData(category: string = ''): Observable<ZeldaItemsData> {
+  getData(category: string): Observable<ZeldaItemsData> {
     const r = this.http.get<ZeldaItemsData>(this.baseURL + `${category}`);
     console.log(r);
     return r;

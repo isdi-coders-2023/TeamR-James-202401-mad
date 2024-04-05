@@ -1,14 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 
 import { StateService } from './state.service';
-import { ItemsData } from './zelda-items-data';
+import { ItemsData, ZeldaItemsData } from './zelda-items-data';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DataService } from './data-service.service';
+import { of } from 'rxjs';
 
 describe('StateService', () => {
   let service: StateService;
+  let httpService: DataService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+      providers: [StateService],
+    }).compileComponents();
     service = TestBed.inject(StateService);
+    httpService = TestBed.inject(DataService);
   });
 
   it('should be created', () => {
@@ -16,10 +24,14 @@ describe('StateService', () => {
   });
 
   it('getItems should return ...', () => {
-    const mockData = [{ id: 1 }, { id: 2 }, { id: 3 }] as ItemsData[];
-    service.setItems(mockData);
+    spyOn(httpService, 'getData').and.returnValue(
+      of({ data: [] } as ZeldaItemsData),
+    );
+    const mockData = '';
+    service.loadItems(mockData);
     let items: ItemsData[] = [];
     service.getItems().subscribe((data) => (items = data.data));
-    expect(items).toEqual(mockData);
+    expect(items).toEqual([]);
+    expect(httpService.getData).toHaveBeenCalledWith(mockData);
   });
 });
