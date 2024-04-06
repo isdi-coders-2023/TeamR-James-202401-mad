@@ -59,6 +59,17 @@ import {
       flex-direction: column;
       align-items: center;
       margin-top: 40px;
+      background-image: url('../../../assets/wallpaperform.svg');
+      border: 1px solid #000000;
+      box-shadow: 0px 0px 5px 5px rgb(45, 64, 96);
+      border-radius: 20px;
+      background-size: cover;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
       background-image: url('../../../assets/wallpaperzeldaform3.svg');
       padding-block: 2rem;
       border: 1px solid #000000;
