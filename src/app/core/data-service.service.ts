@@ -15,4 +15,8 @@ export class DataService {
     console.log(r);
     return r;
   }
+  //   getId(id: number): Observable<ItemsData> {
+  // const x = this.http.get(Observable<ItemsData>);
+
+  //   }
 }

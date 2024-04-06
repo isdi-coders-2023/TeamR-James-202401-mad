@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './navbar.component.html',
   styles: `
     :host {
+      z-index: 2;
       .nav-list {
         display: flex;
         align-items: center;

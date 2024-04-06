@@ -54,44 +54,40 @@ import {
     </div>
   `,
   styles: `
-    .form {
+    :host {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-      background-image: url('../../../assets/wallpaperform.svg');
-      border: 1px solid #000000;
-      box-shadow: 0px 0px 5px 5px rgb(45, 64, 96);
-      border-radius: 20px;
-      background-size: cover;
-    }
-    .form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 40px;
-      background-image: url('../../../assets/wallpaperzeldaform3.svg');
-      padding-block: 2rem;
-      border: 1px solid #000000;
-      box-shadow: 0px 0px 5px 5px rgb(45, 64, 96);
-      border-radius: 20px;
-      background-size: cover;
-    }
+      justify-content: center;
+      z-index: 1;
+      .form {
+        width: 250px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url('../../../assets/wallpaperzeldaform3.svg');
+        padding-block: 2rem;
+        border: 1px solid #000000;
+        box-shadow: 0px 0px 5px 5px rgb(45, 64, 96);
+        border-radius: 20px;
+        background-size: cover;
+        background-position: 0%;
+      }
 
-    .imgform {
-      text-align: center;
-      margin-bottom: 20px;
-      color: white;
-    }
+      .imgform {
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+      }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-    label {
-      margin-bottom: 10px;
+      label {
+        margin-bottom: 10px;
+      }
     }
   `,
 })
