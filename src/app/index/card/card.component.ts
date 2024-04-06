@@ -6,12 +6,7 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'zld-card',
   standalone: true,
   imports: [RouterModule],
-  template: ` <div
-    class="card"
-    (click)="handleClick()"
-    (keyup)="handleClick()"
-    tabindex="0"
-  >
+  template: ` <div class="card">
     @if (isImageDefined()) {
       <img
         src="{{ zeldaInfo.image }}"
@@ -57,9 +52,5 @@ export class CardComponent {
 
   isImageDefined(): boolean {
     return this.zeldaInfo && this.zeldaInfo.image !== undefined;
-  }
-
-  handleClick() {
-    this.router.navigate(['/details']);
   }
 }
