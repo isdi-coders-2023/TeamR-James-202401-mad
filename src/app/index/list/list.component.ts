@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   imports: [CardComponent],
   template: `
     <div class="list-container">
-      @for (item of zeldaItemsData?.data; track $index) {
+      @for (item of getDisplayedItem(); track $index) {
         <zld-card [zeldaInfo]="item" class="zelda-list"></zld-card>
       }
     </div>
@@ -19,15 +19,14 @@ import { ActivatedRoute } from '@angular/router';
     .list-container {
       display: flex;
       flex-direction: column;
-      align-content: center;
-      padding-block: 100px;
-      margin: 0;
+      @media (width > 800px) {
+        flex-direction: row;
+      }
     }
     .zelda-list {
       z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-
+      display: flex;
+      justify-content: center;
       gap: 10px;
       padding: 20px;
       text-decoration: none;
@@ -37,6 +36,8 @@ import { ActivatedRoute } from '@angular/router';
 export default class ListComponent implements OnInit {
   zeldaItemsData?: ZeldaItemsData;
   category: string = '';
+  itemForPage: number = 5;
+  currentPage: number = 2;
 
   constructor(
     private state: StateService,
@@ -59,5 +60,17 @@ export default class ListComponent implements OnInit {
 
   loadCard() {
     this.state.loadItems(this.category);
+  }
+  getDisplayedItem() {
+    const startIndex = (this.currentPage - 1) * this.itemForPage;
+    const endIndex = startIndex + this.itemForPage;
+    console.log(this.totalPages());
+    return this.zeldaItemsData?.data.slice(startIndex, endIndex) || [];
+  }
+
+  totalPages(): number {
+    return Math.ceil(
+      (this.zeldaItemsData?.data.length || 0) / this.itemForPage,
+    );
   }
 }
