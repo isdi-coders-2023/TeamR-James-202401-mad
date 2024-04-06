@@ -29,7 +29,6 @@ import { ItemsData } from '../../core/zelda-items-data';
       align-content: center;
       gap: 0.8rem;
 
-      flex-wrap: wrap;
       padding: 1rem;
 
       background-color: black;

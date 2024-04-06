@@ -18,7 +18,6 @@ import { NavbarComponent } from '../../navbar/navbar.component';
   `,
   styles: `
     header {
-      position: fixed;
       width: 100vw;
       height: 70px;
       display: flex;
