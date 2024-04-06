@@ -1,9 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'zld-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './navbar.component.html',
   styles: `
     :host {
@@ -23,12 +24,13 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
         margin-top: -0.7rem;
         cursor: pointer;
       }
-      .nav-list-desk {
-        display: none;
-      }
+
       @media (width > 800px) {
+        .nav {
+          display: flex;
+        }
         .nav-list {
-          display: none;
+          display: flex;
         }
 
         .navbar {

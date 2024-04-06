@@ -24,8 +24,8 @@ describe('DataServiceService', () => {
     expect(service.getData).toBeTruthy();
   });
   it('should call getData function', () => {
-    spyOn(service, 'getData').and.callThrough();
-    service.getData();
-    expect(service.getData).toHaveBeenCalled();
+    spyOn(console, 'log').and.callThrough();
+    service.getData('monsters');
+    expect(console.log).toHaveBeenCalled();
   });
 });

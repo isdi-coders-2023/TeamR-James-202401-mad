@@ -8,7 +8,7 @@ export const routes: Routes = [
     loadComponent: () => import('../app/index/home/home.component'),
   },
   {
-    path: 'list',
+    path: 'list/:category',
     title: 'LIST',
     loadComponent: () => import('../app/index/list/list.component'),
   },
