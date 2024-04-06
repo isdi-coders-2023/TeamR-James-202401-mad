@@ -12,11 +12,7 @@ export const routes: Routes = [
     title: 'LIST',
     loadComponent: () => import('../app/index/list/list.component'),
   },
-  {
-    path: 'monsters',
-    title: 'MONSTER',
-    loadComponent: () => import('../app/index/monster/monster.component'),
-  },
+
   {
     path: 'create',
     title: 'FORM',
@@ -27,21 +23,7 @@ export const routes: Routes = [
     title: 'DETAILS',
     loadComponent: () => import('../app/index/details/details.component'),
   },
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
-  /* {
-    path: '',
-    title: '',
-    loadComponent: () => import(''),
-  }, */
+
   {
     path: 'error',
     title: '404-NOT FOUND',
