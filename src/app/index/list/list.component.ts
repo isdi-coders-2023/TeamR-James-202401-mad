@@ -40,8 +40,8 @@ export default class ListComponent implements OnInit {
   cardData!: { data: ItemsData[] };
 
   constructor(
-    private serviceZelda: DataService,
-    private state: StateService,
+    public serviceZelda: DataService,
+    public state: StateService,
     private http: HttpClient,
   ) {
     this.serviceZelda.getData('monsters').subscribe({

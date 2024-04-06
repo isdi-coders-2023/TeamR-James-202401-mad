@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import  ListComponent  from './list.component';
+import ListComponent from './list.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { DataService } from '../../core/data-service.service';
+import { StateService } from '../../core/state.service';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -8,16 +11,16 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ListComponent]
-    })
-    .compileComponents();
+      imports: [ListComponent, HttpClientTestingModule],
+      providers: [DataService, StateService],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should load data on initialization', () => {
+    expect(component.zeldaItemsData).toBeDefined();
   });
 });
