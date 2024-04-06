@@ -67,17 +67,6 @@ export default class ListComponent implements OnInit {
     console.log(this.totalPages());
     return this.zeldaItemsData?.data.slice(startIndex, endIndex) || [];
   }
-  nextPage() {
-    if (this.currentPage < this.totalPages()) {
-      this.currentPage++;
-    }
-  }
-
-  prevPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-    }
-  }
 
   totalPages(): number {
     return Math.ceil(
