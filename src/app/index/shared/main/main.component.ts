@@ -15,7 +15,7 @@ import ErrorComponent from '../error/error.component';
   styles: `
     .main {
       width: 100vw;
-      height: 93vh;
+      height: 82vh;
       background-image: url('../../../../assets/background.png');
       background-size: cover;
       background-position: center;
