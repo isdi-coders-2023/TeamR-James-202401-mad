@@ -3,17 +3,19 @@ import { StateService } from '../../core/state.service';
 import { ZeldaItemsData } from '../../core/zelda-items-data';
 import { CardComponent } from '../card/card.component';
 import { ActivatedRoute } from '@angular/router';
+import { PageButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'zld-list',
   standalone: true,
-  imports: [CardComponent],
   template: `
+    <zld-button label="Previous" (pageChange)="prevPage()"></zld-button>
     <div class="list-container">
       @for (item of getDisplayedItem(); track $index) {
         <zld-card [zeldaInfo]="item" class="zelda-list"></zld-card>
       }
     </div>
+    <zld-button label="Next" (pageChange)="nextPage()"></zld-button>
   `,
   styles: `
     .list-container {
@@ -32,12 +34,15 @@ import { ActivatedRoute } from '@angular/router';
       text-decoration: none;
     }
   `,
+  imports: [CardComponent, PageButtonComponent],
 })
 export default class ListComponent implements OnInit {
   zeldaItemsData?: ZeldaItemsData;
   category: string = '';
   itemForPage: number = 5;
-  currentPage: number = 2;
+  currentPage: number = 1;
+  totalPage: number =
+    (this.zeldaItemsData?.data.length || 0) / this.itemForPage;
 
   constructor(
     private state: StateService,
@@ -54,8 +59,10 @@ export default class ListComponent implements OnInit {
       next: (data) => {
         this.zeldaItemsData = data;
         console.log(data);
+        console.log(`total page:`, this.totalPages());
       },
     });
+    this.loadCard();
   }
 
   loadCard() {
@@ -64,13 +71,29 @@ export default class ListComponent implements OnInit {
   getDisplayedItem() {
     const startIndex = (this.currentPage - 1) * this.itemForPage;
     const endIndex = startIndex + this.itemForPage;
-    console.log(this.totalPages());
+    console.log('get display item:', this.totalPages());
     return this.zeldaItemsData?.data.slice(startIndex, endIndex) || [];
   }
 
   totalPages(): number {
-    return Math.ceil(
+    return Math.round(
       (this.zeldaItemsData?.data.length || 0) / this.itemForPage,
     );
+  }
+
+  onPageChange(page: number) {
+    this.currentPage = page;
+  }
+
+  nextPage() {
+    if (this.currentPage < this.totalPages()) {
+      this.currentPage++;
+    }
+  }
+
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
   }
 }
