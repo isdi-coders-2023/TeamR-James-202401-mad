@@ -64,12 +64,8 @@ export default class DetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.state.getItems().subscribe((response: ZeldaItemsData) => {
-    //   this.zeldaDetails = response.data;
-
-    // });
     this.route.params.subscribe((params) => {
-      const id = +params['id']; // Obtener el ID del parámetro de la URL
+      const id = +params['id'];
       this.getDetails(id);
     });
     console.log('detail', this.zeldaDetails);
