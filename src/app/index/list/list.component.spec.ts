@@ -46,4 +46,36 @@ describe('ListComponent', () => {
     expect(component.zeldaItemsData).toEqual({ data: mockData });
     expect(state.getItems).toHaveBeenCalled();
   });
+
+  it('should change to the next page', () => {
+    component.currentPage = 1;
+    component.totalPages();
+    component.nextPage();
+    expect(component.currentPage).toEqual(1);
+  });
+
+  it('should not change to the next page if already on the last page', () => {
+    component.currentPage = 3;
+    component.totalPages();
+    component.nextPage();
+    expect(component.currentPage).toEqual(3);
+  });
+
+  it('should change to the previous page', () => {
+    component.currentPage = 2;
+    component.prevPage();
+    expect(component.currentPage).toEqual(1);
+  });
+
+  it('should not change to the previous page if already on the first page', () => {
+    component.currentPage = 1;
+    component.prevPage();
+    expect(component.currentPage).toEqual(1);
+  });
+
+  it('should change current page when onPageChange is called', () => {
+    const page = 2;
+    component.onPageChange(page);
+    expect(component.currentPage).toEqual(page);
+  });
 });
