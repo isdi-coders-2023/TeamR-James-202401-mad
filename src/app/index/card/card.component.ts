@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ItemsData } from '../../core/zelda-items-data';
 import { Router, RouterModule } from '@angular/router';
 
@@ -6,7 +6,12 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'zld-card',
   standalone: true,
   imports: [RouterModule],
-  template: ` <div class="card">
+  template: ` <div
+    class="card"
+    (click)="handleClick()"
+    tabindex="0"
+    (keyup)="handleClick()"
+  >
     @if (isImageDefined()) {
       <img
         src="{{ zeldaInfo.image }}"
@@ -46,10 +51,15 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class CardComponent {
   @Input() zeldaInfo!: ItemsData;
+  @Output() cardClicked: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private router: Router) {}
 
   isImageDefined(): boolean {
     return this.zeldaInfo && this.zeldaInfo.image !== undefined;
+  }
+  handleClick() {
+    this.cardClicked.emit(this.zeldaInfo.id);
+    this.router.navigate([`/details/${this.zeldaInfo.id}`]);
   }
 }

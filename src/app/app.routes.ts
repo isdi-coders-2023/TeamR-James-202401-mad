@@ -19,7 +19,7 @@ export const routes: Routes = [
     loadComponent: () => import('../app/index/form/form.component'),
   },
   {
-    path: 'details',
+    path: 'details/:id',
     title: 'DETAILS',
     loadComponent: () => import('../app/index/details/details.component'),
   },

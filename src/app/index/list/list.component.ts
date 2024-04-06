@@ -37,7 +37,7 @@ export default class ListComponent implements OnInit {
   zeldaItemsData?: ZeldaItemsData;
   category: string = '';
   itemForPage: number = 5;
-  currentPage: number = 2;
+  currentPage: number = 1;
 
   constructor(
     private state: StateService,
@@ -53,7 +53,6 @@ export default class ListComponent implements OnInit {
     this.state.getItems().subscribe({
       next: (data) => {
         this.zeldaItemsData = data;
-        console.log(data);
       },
     });
   }
@@ -64,7 +63,6 @@ export default class ListComponent implements OnInit {
   getDisplayedItem() {
     const startIndex = (this.currentPage - 1) * this.itemForPage;
     const endIndex = startIndex + this.itemForPage;
-    console.log(this.totalPages());
     return this.zeldaItemsData?.data.slice(startIndex, endIndex) || [];
   }
 
