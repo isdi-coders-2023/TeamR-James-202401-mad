@@ -29,6 +29,11 @@ export const routes: Routes = [
     title: '404-NOT FOUND',
     loadComponent: () => import('./index/shared/error/error.component'),
   },
+  {
+    path: 'favorites',
+    title: 'FAVORITES',
+    loadComponent: () => import('../app/index/favorite/favorite.component'),
+  },
 
   { path: '**', redirectTo: 'error' },
 ];

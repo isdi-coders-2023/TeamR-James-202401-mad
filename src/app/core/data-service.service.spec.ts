@@ -27,5 +27,8 @@ describe('DataServiceService', () => {
     spyOn(console, 'log').and.callThrough();
     service.getData('monsters');
     expect(console.log).toHaveBeenCalled();
+
+    service.getData('monsters');
+    expect(console.log).toHaveBeenCalled();
   });
 });

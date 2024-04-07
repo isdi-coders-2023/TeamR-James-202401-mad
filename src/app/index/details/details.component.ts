@@ -3,6 +3,7 @@ import ListComponent from '../list/list.component';
 import { ItemsData } from '../../core/zelda-items-data';
 import { StateService } from '../../core/state.service';
 import { ActivatedRoute } from '@angular/router';
+import { ServerService } from '../../core/server/server.service';
 
 @Component({
   selector: 'zld-details',
@@ -10,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
   imports: [ListComponent],
   template: `
     <div class="details-container">
+      <button (click)="onClick()">click favorite</button>
+
       @if (zeldaDetails) {
         <div class="details">
           <h2>{{ zeldaDetails.name }}</h2>
@@ -56,11 +59,12 @@ import { ActivatedRoute } from '@angular/router';
   `,
 })
 export default class DetailsComponent implements OnInit {
-  zeldaDetails: ItemsData | undefined;
+  zeldaDetails!: ItemsData | undefined;
 
   constructor(
     private state: StateService,
     private route: ActivatedRoute,
+    public service: ServerService,
   ) {}
 
   ngOnInit(): void {
@@ -75,5 +79,10 @@ export default class DetailsComponent implements OnInit {
     this.state.getItems().subscribe((response) => {
       this.zeldaDetails = response.data.find((item) => item.id === id);
     });
+  }
+  onClick() {
+    if (this.zeldaDetails) {
+      this.service.postFavorite(this.zeldaDetails);
+    }
   }
 }
